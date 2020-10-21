@@ -7,6 +7,14 @@ public abstract class Shape {
 		this.color = color;
 	}
 
+	public Point getPoint() {
+		return point;
+	}
+
+	public void setPoint(Point point) {
+		this.point = point;
+	}
+
 	public abstract double  area(); 
 		
 

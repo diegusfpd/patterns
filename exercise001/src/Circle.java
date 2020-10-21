@@ -1,5 +1,5 @@
 
-public class Circle {
+public class Circle extends Shape{
 	private double radius;
 	private String color;
 	public Circle(String color,double radius) {
@@ -18,6 +18,7 @@ public class Circle {
 	public double getRadius() {
 		return radius;
 	};
+	@Override
 	public double area() {
 		return 3 * radius * radius;
 	}

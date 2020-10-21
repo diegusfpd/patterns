@@ -1,7 +1,7 @@
 
 public class Rectangle extends Shape {
 	
-	public double height;
+	private double height;
 	public double getHeight() {
 		return height;
 	}
@@ -12,7 +12,7 @@ public class Rectangle extends Shape {
 		this.width = width;
 	}
 
-	public double width;
+	private double width;
 	public Rectangle(String color,double height, double width) {
 		this.height=height;
 		this.width=width;
