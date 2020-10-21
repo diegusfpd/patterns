@@ -1,12 +1,16 @@
 
-public abstract class Shape  extends Point{
-	
-public String color;
+public abstract class Shape {
+	public String color;
+	public Point point;
 
-public double area() {	
-	return area();
-}
-public String getColor() {
-	return color;
-}
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public abstract double  area(); 
+		
+
+	public String getColor() {
+		return color;
+	}
 }
