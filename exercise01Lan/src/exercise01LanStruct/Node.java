@@ -10,13 +10,14 @@ public class Node extends LanComponent {
 	@Override
 	public void send(Packet packet) {
 
-		this.getNextComponent().send(packet);
+		//this.getNextComponent().send(packet);
+		getNextComponent().receive(packet);
 	}
 
 	@Override
 	public void receive(Packet packet) {
 		
-		this.getNextComponent().receive(packet);
+		this.getNextComponent().send(packet);
 		}
 	
 	}

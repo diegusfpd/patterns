@@ -8,14 +8,20 @@ public class PrintServer extends Node{
 	}
 	@Override
 	public void receive(Packet packet) {
+		if (packet.getDestinationAddress().equals(address)) {
+			print(packet);
+		}
+		else
+		{ send(packet);			
+		}		
+		}
+	@Override
+	public void send(Packet packet) {
 		
 		this.getNextComponent().receive(packet);
 		}
 	public void print(Packet packet) {
-		if (packet.getDestinationAddress().equals(address)) {
-			System.out.println("Print");
-		}
-		
+		System.out.println("print pack");
 	}
 	}
 

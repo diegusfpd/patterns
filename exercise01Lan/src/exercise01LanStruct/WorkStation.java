@@ -7,5 +7,6 @@ public class WorkStation extends Node{
 		// TODO Auto-generated constructor stub
 	}
     public void originate(Packet packet) {
+    	send(packet);
     }
 }
