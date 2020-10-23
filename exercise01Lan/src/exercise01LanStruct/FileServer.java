@@ -8,8 +8,8 @@ public class FileServer extends PacketHandler{
 	}
 
 	@Override
-	protected void print(Packet packet) {
-		// TODO Auto-generated method stub
+	public void handle(Packet packet) {
+		System.out.println("save in FileServer");
 		
 	}
 

@@ -1,12 +1,13 @@
 package exercise01LanStruct;
 
-public class PrintServer extends Node {
+public class PrintServer extends PacketHandler {
 	private PrintStrategy printing;
+	
 	public PrintServer(String address, PrintStrategy printing) {
-		super(address);
-		this.printing=printing;
-		// TODO Auto-generated constructor stub
+		               super(address);
+		               this.printing=printing;
 	}
+	
 	
 	public PrintStrategy getPrinting() {
 		return printing;
@@ -17,14 +18,9 @@ public class PrintServer extends Node {
 	}
 
 	@Override
-	public void receive(Packet packet) {
-		if (packet.getDestinationAddress().equals(address)) {
-			this.print(packet);
-		}
-		else
-		{ send(packet);			
-		}		
-		}
+	public void receive(Packet packet) {		
+			this.handle(packet);
+	}
 	@Override
 	public void send(Packet packet) {
 		
@@ -34,5 +30,21 @@ public class PrintServer extends Node {
 		System.out.println(this.getAddress() + " " + packet.getContents());
 		printing.print(packet);
 	}
+
+
+	@Override
+	protected void handle(Packet packet) {
+		System.out.println(this.getAddress() + " " + packet.getContents());
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+
+//	@Override
+//	protected void handle(Packet packet) {
+//		System.out.println("printing");
+//		
+//	}
 	}
 

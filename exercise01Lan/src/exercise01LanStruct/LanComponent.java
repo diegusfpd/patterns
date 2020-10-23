@@ -1,7 +1,7 @@
 package exercise01LanStruct;
 
 public abstract class LanComponent {
-protected String address;
+private String address;
 private LanComponent nextComponent;
 public LanComponent(String address) {
 	this.address=address;

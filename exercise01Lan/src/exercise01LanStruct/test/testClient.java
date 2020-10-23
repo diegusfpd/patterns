@@ -1,5 +1,7 @@
 package exercise01LanStruct.test;
 
+import exercise01LanStruct.FileServer;
+import exercise01LanStruct.MQServer;
 import exercise01LanStruct.Node;
 import exercise01LanStruct.Packet;
 import exercise01LanStruct.PrintServer;
@@ -18,15 +20,23 @@ public class testClient {
 		PrintServer p1 = new PrintServer("printerabis",new Printer3D(null));
 		Node n2 = new Node("n12");
 		PrintServer p2 = new PrintServer("printersfpd",new PrinterLaser(null));
+		FileServer f1 = new FileServer("n12");
+		MQServer mq1 = new MQServer("mqserver");
 		Packet packet1 = new Packet("printersfpd","messagePrint");
+		Packet packet2 = new Packet("mqserver","messageForMq");
 		
 		w1.setNextComponent(n1);
 		n1.setNextComponent(p1);
 		p1.setNextComponent(n2);
 		n2.setNextComponent(p2);
+		p2.setNextComponent(f1);
+		f1.setNextComponent(mq1);
+		mq1.setNextComponent(p2);
 		p2.setNextComponent(w1);
 		
+		
 		w1.originate(packet1);
+		w1.originate(packet2);
 	}
 
 }

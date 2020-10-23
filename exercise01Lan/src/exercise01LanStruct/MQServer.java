@@ -8,9 +8,12 @@ public class MQServer extends PacketHandler{
 	}
 
 	@Override
-	protected void print(Packet packet) {
-		// TODO Auto-generated method stub
+	protected void handle(Packet packet) {
+		System.out.println("save in MQServer");
 		
 	}
+
+	
+	
 
 }
