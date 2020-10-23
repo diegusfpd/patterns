@@ -1,7 +1,7 @@
 package exercise01LanStruct;
 
-public class PrintServer extends Node{
-
+public class PrintServer extends Node {
+	
 	public PrintServer(String address) {
 		super(address);
 		// TODO Auto-generated constructor stub
