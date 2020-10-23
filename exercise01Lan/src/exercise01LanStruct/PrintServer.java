@@ -7,10 +7,19 @@ public class PrintServer extends Node {
 		this.printing=printing;
 		// TODO Auto-generated constructor stub
 	}
+	
+	public PrintStrategy getPrinting() {
+		return printing;
+	}
+
+	public void setPrinting(PrintStrategy printing) {
+		this.printing = printing;
+	}
+
 	@Override
 	public void receive(Packet packet) {
 		if (packet.getDestinationAddress().equals(address)) {
-			print(packet, printing);
+			this.print(packet);
 		}
 		else
 		{ send(packet);			
@@ -21,9 +30,9 @@ public class PrintServer extends Node {
 		
 		this.getNextComponent().receive(packet);
 		}
-	public void print(Packet packet,PrintStrategy printing) {
-		this.printing.print(packet);
-		//System.out.println(this.getAddress() + " " + packet.getContents());
+	public void print(Packet packet) {		
+		System.out.println(this.getAddress() + " " + packet.getContents());
+		printing.print(packet);
 	}
 	}
 
