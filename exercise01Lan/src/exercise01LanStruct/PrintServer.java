@@ -21,7 +21,7 @@ public class PrintServer extends Node{
 		this.getNextComponent().receive(packet);
 		}
 	public void print(Packet packet) {
-		System.out.println("print pack");
+		System.out.println(this.getAddress() + " " + packet.getContents());
 	}
 	}
 
