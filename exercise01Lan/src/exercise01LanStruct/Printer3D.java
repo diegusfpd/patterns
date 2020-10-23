@@ -1,13 +1,13 @@
 package exercise01LanStruct;
 
-public class Printer3D extends PrintServer implements PrintStrategy{
+public class Printer3D  implements PrintStrategy{
 
 	public Printer3D(String address) {
-		super(address);		
+		super();		
 	}
 	@Override
 	public void print(Packet packet) {
-		System.out.println(this.getAddress() + " " + packet.getContents() + " on 3D");
+		System.out.println(this.getClass() + " " + packet.getContents() + " on 3D");
 	}
 
 }

@@ -1,13 +1,13 @@
 package exercise01LanStruct;
 
-public class PrinterLaser extends PrintServer implements PrintStrategy{
-
+public class PrinterLaser implements PrintStrategy {
+	
 	public PrinterLaser(String address) {
-		super(address);		
+		super();		
 	}
 	@Override
 	public void print(Packet packet) {
-		System.out.println(this.getAddress() + " " + packet.getContents() + " on Laser");
+		System.out.println(this.getClass() + " " + packet.getContents() + " on Laser");
 	}
 
 }

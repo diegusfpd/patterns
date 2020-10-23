@@ -1,13 +1,13 @@
 package exercise01LanStruct;
 
-public class PrinterInktjet extends PrintServer implements PrintStrategy {
+public class PrinterInktjet  implements PrintStrategy {
 
 	public PrinterInktjet(String address) {
-		super(address);		
+		
 	}
 	@Override
 	public void print(Packet packet) {
-		System.out.println(this.getAddress() + " " + packet.getContents() + " on Inktjet");
+		System.out.println(this.getClass() + " " + packet.getContents() + " on Inktjet");
 	}
 
 }
